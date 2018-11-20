@@ -9,15 +9,20 @@ exports.filter = function(functionName, inputArray) {
   return result;
 }
 
-exports.reduce = function(functionName, inputArray) {
+exports.reduce = function(functionName, inputArray, initializer) {
   if(!inputArray.length) {
     return undefined;
   }
   let result = inputArray[0];
-  if(inputArray.length == 1) {
+  let index = 1;
+  if(initializer != undefined) {
+    result = initializer;  
+    index = 0;
+  }
+  if(inputArray.length == 1 && initializer == undefined) {
     return result;
   }
-  for(let index = 1; index < inputArray.length; index++) {
+  for(; index < inputArray.length; index++) {
     result = functionName(result, inputArray[index]);
   }
   return result;
