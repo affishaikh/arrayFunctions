@@ -1,3 +1,11 @@
+exports.map = function(functionName, inputArray) {
+  let result = [];
+  for(let element of inputArray) {
+    result.push(functionName(element));
+  }
+  return result;
+}
+
 exports.filter = function(functionName, inputArray) {
   let result = [];
   for(let element of inputArray) {
