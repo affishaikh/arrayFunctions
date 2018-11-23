@@ -13,5 +13,7 @@ describe('map test', function() {
 
   it('should return an array of same number of elements', function() {
     assert.deepEqual(map(square,[2]), [4]);
+    assert.deepEqual(map(square,[2, 4, 3]), [4, 16, 9]);
+    assert.deepEqual(map(square,[6, 7, 8]), [36, 49, 64]);
   });
 });
