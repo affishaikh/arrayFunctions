@@ -1,7 +1,3 @@
-const square = function(element) {
-  return element * element;
-}
-
 const index = {
     index : 0,
     lookup: function() { return this.index},
@@ -12,8 +8,9 @@ const index = {
 const map = function(mapper, array) {
   let result = [];
   let element;
-  if(index.lookup() == array.length-1) { 
+  if(index.lookup() >= array.length-1) { 
     element = mapper(array[index.lookup()]);
+    index.reset();
     result.unshift(element);
     return result;
   }
@@ -23,5 +20,4 @@ const map = function(mapper, array) {
   result.unshift(element);
   return result;
 }
-
-console.log(map(square, [2,4]));
+exports.map = map;
