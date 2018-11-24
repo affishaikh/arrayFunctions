@@ -1,8 +1,11 @@
-exports.map = function(functionName, inputArray) {
+const map = function(mapper, array) {
   let result = [];
-  for(let element of inputArray) {
-    result.push(functionName(element));
+  if(array.length == 0) {
+    return result;
   }
+  let element = mapper(array[0]);
+  result = map(mapper, array.slice(1));
+  result.unshift(element);
   return result;
 }
 
@@ -35,3 +38,5 @@ exports.reduce = function(functionName, inputArray, initializer) {
   }
   return result;
 }
+
+exports.map = map;
