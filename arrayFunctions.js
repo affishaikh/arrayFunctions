@@ -1,12 +1,11 @@
 const map = function(mapper, array) {
-  let result = [];
   if(array.length == 0) {
-    return result;
+    return [];
   }
   let element = mapper(array[0]);
-  result = map(mapper, array.slice(1));
+  let result = map(mapper, array.slice(1));
   result.unshift(element);
-  return result;
+  return result; 
 }
 
 exports.filter = function(functionName, inputArray) {
