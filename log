@@ -1,0 +1,36 @@
+
+
+  filter
+    ✓ should return an empty array
+    ✓ should return an array of even numbers
+    ✓ should return an array of numbers greater than 10
+
+  map test
+    ✓ should return an empty array
+    1) should return an array of same number of elements
+
+  reduce
+    ✓ should return the sum of array elements
+    ✓ should return the only element in the array
+    ✓ should return undefined
+    ✓ should return sum of elements and initializer
+
+
+  8 passing (11ms)
+  1 failing
+
+  1) map test
+       should return an array of same number of elements:
+
+      AssertionError [ERR_ASSERTION]: [ 4 ] deepEqual [ 3 ]
+      + expected - actual
+
+       [
+      -  4
+      +  3
+       ]
+      
+      at Context.<anonymous> (test/mapTest.js:15:12)
+
+
+
